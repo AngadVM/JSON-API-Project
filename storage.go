@@ -49,9 +49,9 @@ func (s *PostgresStore) createAccountTable() error {
 		first_name varchar(100),
 		last_name varchar(100),
 		number serial,
-    encrypted_password varchar(100),	
+    		encrypted_password varchar(100),	
 		balance serial,
-    created_at timestamp	
+    		created_at timestamp	
 	)`
 	
 	_, err := s.db.Exec(query)
@@ -140,7 +140,7 @@ func scanIntoAccount(rows *sql.Rows) (*Account, error) {
 		&account.FirstName,
 		&account.LastName,
 		&account.Number,
-    &account.EncryptedPassword,
+    		&account.EncryptedPassword,
 		&account.Balance,
 		&account.CreatedAt)
 
